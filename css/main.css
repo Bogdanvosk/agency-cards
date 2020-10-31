@@ -101,6 +101,10 @@ a.card-link {
    transition: all 0.3s;
 }
 
+a.card-link--hidden {
+   display: none;
+}
+
 a.card-link:hover {
    box-shadow: 0px 10px 13px -7px #2c2c2c, 0px 0px 8px 4px rgba(0, 0, 0, 0);
 }
@@ -200,6 +204,11 @@ a.card-link:hover {
 /*! SIDEBAR */
 
 /* WIDGET 1 */
+
+.show-filter {
+   display: none;
+}
+
 .widget + .widget {
    margin-top: 30px;
 }
@@ -222,6 +231,11 @@ a.card-link:hover {
    background-position: center;
    position: absolute;
    right: 0;
+   transition: transform 0.3s;
+}
+
+.widget__title--active::after {
+   transform: rotateX(180deg);
 }
 
 /* Location buttons group */
@@ -482,6 +496,8 @@ a.card-link:hover {
 
 .toggle-sidebar-wrapper {
    display: none;
+   justify-content: center;
+   align-items: center;
    position: fixed;
    z-index: 9;
    right: 10px;
@@ -494,7 +510,7 @@ a.card-link:hover {
 
 @media (max-width: 829px) {
    .toggle-sidebar-wrapper {
-      display: block;
+      display: flex;
    }
 }
 
@@ -515,7 +531,6 @@ a.card-link:hover {
    cursor: pointer;
    border: none;
    background: none;
-   margin: 9px auto;
 }
 
 .toggle-sidebar span {
